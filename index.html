@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>브레인 잭팟 BRAIN JACKPOT</title>
+<meta name="description" content="암산 문제를 맞혀야만 돌아가는 5릴 슬롯머신 — 초등 1학년부터 중학교 1학년까지의 수학 게임">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bungee&family=Bungee+Shade&family=IBM+Plex+Sans+KR:wght@400;600;700&family=Jua&display=swap">
+<link rel="stylesheet" href="assets/board.css">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<div id="app" class="app">
+  <header class="topbar">
+    <div class="wallet" aria-live="polite" aria-label="내 잔고" title="내 잔고">
+      <span class="wallet-icon"><svg viewBox="0 0 46 40" aria-hidden="true"><defs><linearGradient id="bj-coin-face" x1="0.15" y1="0.05" x2="0.85" y2="0.95"><stop offset="0" stop-color="#fff7cc"/><stop offset="0.32" stop-color="#fad75e"/><stop offset="0.68" stop-color="#e3a52a"/><stop offset="1" stop-color="#b8761a"/></linearGradient><linearGradient id="bj-coin-edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d69a28"/><stop offset="1" stop-color="#7d4c0d"/></linearGradient><linearGradient id="bj-coin-star" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff6c4"/><stop offset="1" stop-color="#f2c042"/></linearGradient></defs><circle cx="30" cy="16.92" r="12" fill="url(#bj-coin-edge)" stroke="#6e440a" stroke-width="1.2"/><circle cx="30" cy="15" r="12" fill="url(#bj-coin-face)" stroke="#8a5a10" stroke-width="1.3"/><circle cx="30" cy="15" r="9.12" fill="none" stroke="#b07a18" stroke-width="1.08"/><circle cx="30" cy="15" r="8.16" fill="none" stroke="#fff1b0" stroke-width="0.6" opacity="0.75"/><path d="M30 10.08L31.34 13.52L35.02 13.73L32.17 16.06L33.1 19.63L30 17.64L26.9 19.63L27.83 16.06L24.98 13.73L28.66 13.52Z" fill="url(#bj-coin-star)" stroke="#a06a12" stroke-width="0.72" stroke-linejoin="round"/><path d="M21.36 11.16 A9.6 9.6 0 0 1 27.6 5.64" fill="none" stroke="#fff" stroke-width="1.56" stroke-linecap="round" opacity="0.7"/><circle cx="18" cy="24.4" r="15" fill="url(#bj-coin-edge)" stroke="#6e440a" stroke-width="1.2"/><circle cx="18" cy="22" r="15" fill="url(#bj-coin-face)" stroke="#8a5a10" stroke-width="1.3"/><circle cx="18" cy="22" r="11.4" fill="none" stroke="#b07a18" stroke-width="1.35"/><circle cx="18" cy="22" r="10.2" fill="none" stroke="#fff1b0" stroke-width="0.75" opacity="0.75"/><path d="M18 15.85L19.68 20.14L24.28 20.41L20.71 23.33L21.88 27.79L18 25.3L14.12 27.79L15.29 23.33L11.72 20.41L16.32 20.14Z" fill="url(#bj-coin-star)" stroke="#a06a12" stroke-width="0.9" stroke-linejoin="round"/><path d="M7.2 17.2 A12 12 0 0 1 15 10.3" fill="none" stroke="#fff" stroke-width="1.95" stroke-linecap="round" opacity="0.7"/><path d="M40 1.5L40.89 5.11L44.5 6L40.89 6.89L40 10.5L39.11 6.89L35.5 6L39.11 5.11Z" fill="#fff"/><circle cx="40" cy="6" r="1.57" fill="#fff" opacity="0.6"/></svg></span>
+      <span class="wallet-amount" id="balance">1,000</span>
+      <span class="wallet-delta" id="balance-delta" hidden></span>
+    </div>
+    <button class="wallet gem-purse" id="gem-purse" type="button" aria-label="보석 0개 · 상점 열기" title="상점(드레스룸)">
+      <span class="wallet-icon gem-icon"><svg viewBox="0 0 46 40" aria-hidden="true"><path d="M10 5 H34 L41 14 L22 36 L3 14Z" fill="#b8237a"/><path d="M3 14 L10 5 L14.5 14Z" fill="#ffc2ee"/><path d="M10 5 L22 5 L14.5 14Z" fill="#ffe3f7"/><path d="M14.5 14 L22 5 L29.5 14Z" fill="#ff96df"/><path d="M22 5 L34 5 L29.5 14Z" fill="#ff78d2"/><path d="M34 5 L41 14 L29.5 14Z" fill="#e34aa9"/><path d="M3 14 L14.5 14 L22 36Z" fill="#f472c9"/><path d="M14.5 14 L29.5 14 L22 36Z" fill="#d8399b"/><path d="M29.5 14 L41 14 L22 36Z" fill="#a51f6f"/><path d="M3 14 H41 M10 5 L14.5 14 L22 5 L29.5 14 L34 5 M14.5 14 L22 36 L29.5 14" fill="none" stroke="#fff" stroke-width="0.8" stroke-linejoin="round" opacity="0.55"/><path d="M10 5 H34 L41 14 L22 36 L3 14Z" fill="none" stroke="#6e0f48" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 8 L15.5 8" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><path d="M39 0.5L39.89 4.11L43.5 5L39.89 5.89L39 9.5L38.11 5.89L34.5 5L38.11 4.11Z" fill="#fff"/><circle cx="39" cy="5" r="1.57" fill="#fff" opacity="0.6"/></svg></span>
+      <span class="wallet-amount" id="gems">0</span>
+      <span class="wallet-delta" id="gems-delta" hidden></span>
+    </button>
+    <div class="lv" id="lv" role="img" aria-label="레벨 1">
+      <span class="lv-tag">LV</span><span class="lv-num" id="lv-num">1</span>
+      <span class="lv-bar" aria-hidden="true"><i id="lv-fill"></i></span>
+    </div>
+    <div class="status">
+      <span class="chip chip-streak" id="streak-chip" hidden></span>
+      <span class="chip chip-mult" id="mult-chip" hidden></span>
+      <span class="chip chip-fever" id="fever-chip" hidden></span>
+      <span class="chip chip-bonus" id="bonus-chip" hidden></span>
+    </div>
+    <button class="shop-open" id="shop-open" type="button" aria-label="상점 열기" title="상점(드레스룸)"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 11 H26 L24.5 29 H7.5Z" fill="#fff3c4" stroke="#7a1248" stroke-width="2" stroke-linejoin="round"/><path d="M11.5 13 V8.5 a4.5 4.5 0 0 1 9 0 V13" fill="none" stroke="#7a1248" stroke-width="2.4" stroke-linecap="round"/><path d="M16 15.5 l1.6 3.3 3.6 0.5 -2.6 2.5 0.6 3.6 -3.2 -1.7 -3.2 1.7 0.6 -3.6 -2.6 -2.5 3.6 -0.5Z" fill="#ff4fa3"/></svg><span class="shop-open-label">상점</span></button>
+  </header>
+  <main class="stage">
+    <section class="cabinet" aria-label="슬롯머신">
+      <div class="reels-host" id="reels-host"></div>
+      <div class="stage-floor" aria-hidden="true"></div>
+      <div class="fever-meter" id="fever-meter" role="img" aria-label="피버 게이지">
+        <span class="fm-tag" id="fm-tag">FEVER</span>
+        <span class="fm-pips" id="fm-pips"></span>
+        <span class="fm-max" id="fm-max" hidden>MAX</span>
+        <span class="fm-rush" id="fm-rush" data-led="RUSH 찬스" hidden>RUSH 찬스</span><span class="fm-rush-tip" id="fm-rush-tip" hidden></span>
+        <span class="fm-left" id="fm-left"></span>
+      </div>
+      <div class="bet-row" id="bet-row" role="group" aria-label="배팅 금액">
+        <span class="bet-label">BET</span>
+        <div class="bet-chips" id="bet-chips"></div>
+        <span class="bet-lock-note" id="bet-lock-note" hidden>보너스 중 BET 고정</span>
+      </div>
+      <div class="banner" id="banner" hidden></div>
+      <div class="rush-judge" id="rush-judge" aria-hidden="true" hidden><div class="rj-lamp"><span class="rj-text">RUSH?</span></div><div class="rj-cap" id="rj-cap" hidden>꽝이어도 러시 찬스!</div></div>
+    </section>
+    <section class="desk" aria-label="문제">
+      <p class="notice" id="notice" hidden></p>
+      <div class="screen" id="screen-cards" hidden>
+        <div class="desk-head">
+          <h2 class="desk-title">문제를 선택하세요</h2>
+          <button class="help-open" id="help-open" type="button" aria-label="게임 규칙과 잭팟 족보" title="규칙 · 족보">?</button>
+        </div>
+        <p class="desk-note" id="cards-note" hidden></p>
+        <div class="card-grid" id="card-grid"></div>
+      </div>
+      <div class="screen" id="screen-question" hidden>
+        <div class="desk-head">
+          <div class="problem-title" id="problem-title"></div>
+          <div class="qcount" id="qcount"></div>
+          <button class="text-btn quit-btn" id="quit-btn" type="button">그만두기</button>
+        </div>
+        <div class="progress-row">
+          <div class="phases" id="phases"></div>
+        </div>
+        <div class="board-wrap" id="board"></div>
+        <div class="question-area">
+          <div class="question-wrap" id="question"></div>
+          <div class="qtimer" id="qtimer" hidden aria-live="off">
+            <svg class="qhalo" viewBox="0 0 62 62" aria-hidden="true"><circle class="qhalo-track" cx="31" cy="31" r="27"></circle><circle class="qhalo-ring" id="qtimer-halo" cx="31" cy="31" r="27"></circle></svg>
+            <svg viewBox="0 0 44 44" aria-hidden="true">
+              <circle class="qtimer-track" cx="22" cy="22" r="18"></circle>
+              <circle class="qtimer-ring" id="qtimer-ring" cx="22" cy="22" r="18"></circle>
+              <circle class="qtimer-gold" id="qtimer-gold" cx="22" cy="22" r="12.5"></circle>
+            </svg>
+            <span class="qtimer-num" id="qtimer-num">10</span>
+          </div>
+        </div>
+        <div class="rush-dock" id="rush-dock" hidden></div>
+      </div>
+      <div class="screen" id="screen-done" hidden>
+        <div class="done-card">
+          <p class="done-kicker" id="done-kicker">문제 완료</p>
+          <div class="done-answer" id="done-answer"></div>
+          <p class="done-perfect" id="done-perfect" hidden></p>
+          <p class="done-fever" id="done-fever"></p>
+          <p class="done-gem" id="done-gem" hidden></p>
+          <div class="board-wrap done-board" id="done-board"></div>
+          <button class="primary-btn" id="done-next" type="button">다음 문제 선택하기</button>
+        </div>
+      </div>
+      <div class="screen rush-panel" id="screen-rush" hidden>
+        <p class="rush-note" id="rush-note">8회전 · 빅윈 확정!</p>
+        <div class="rush-ctl" id="rush-ctl">
+          <p class="rush-count" id="rush-count" aria-live="polite">0 / 8</p>
+          <button class="rush-pull" id="rush-pull" type="button">당기기!</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="help" id="help" hidden>
+    <div class="help-panel" role="dialog" aria-modal="true" aria-labelledby="help-title">
+      <h2 class="help-title" id="help-title">도움말</h2>
+      <div class="help-tabs" role="tablist">
+        <button class="help-tab" id="help-tab-rules" type="button" role="tab" aria-controls="help-rules" aria-selected="true">게임 규칙</button>
+        <button class="help-tab" id="help-tab-pay" type="button" role="tab" aria-controls="help-pay" aria-selected="false">잭팟 족보</button>
+      </div>
+      <div class="help-body">
+        <section class="help-page" id="help-rules" role="tabpanel" aria-labelledby="help-tab-rules">
+          <ul class="help-rules">
+            <li><b>정답</b> 한 번 = 슬롯 한 번. 돌려도 돈은 안 빠지고, 맞힐 때마다 <b>💰 정답 보너스</b>를 받아요(+5 에서 시작해 레벨이 오르며 커져요)</li>
+            <li><b>BET</b>이 클수록 당첨금도, 틀렸을 때 벌금도 커져요. 평소엔 레벨이 정한 <b>기본 BET</b>. <b>▲ 크게</b>·<b>▼ 작게 걸기</b> 칩은 누르면 3문항 동안 쓰고, 다 쓰면 잠깐 쉬어야 다시 써요(▲·▼ 1분, ▼▼ 3분)</li>
+            <li><b>문제 카드</b>마다 배율이 달라요(×1~×3). 당첨금·정답 보너스·벌금에 모두 곱해요(VIP 카드의 ⚡·🔥·💯 보너스 돈은 안 곱해요)</li>
+            <li><b>틀리면</b> 벌금이 빠져요. 한 번 더 틀리면 더 많이. <b>읽지도 않고 너무 빨리 틀리면</b> 더 빠져요</li>
+            <li><b>맞힐 때마다</b> 빅윈 확률이 +5%씩 쌓여요. <b>⚡ 골든 타임</b>(타이머 안쪽 금색 링) 안에 맞히면 <b>+10%</b>! 최대 +100%, 틀리면 처음부터. <b>🎰 빅윈 보너스</b>(VIP 카드)는 늘 더해지고 틀려도 안 없어져요</li>
+            <li><b>시간은 넉넉해요.</b> 동그란 타이머가 다 줄면 정답을 보여 주고 감점</li>
+            <li><b>꽝</b>이 나면 기계 아래 <b>피버 게이지</b>가 한 칸씩 차요. 한 번도 안 틀리고 문제를 끝내면 +3칸(피버 중에는 게이지가 멈춰요)</li>
+            <li>게이지가 다 차면 <b>피버 ×2</b>(4회전)! 피버 중 꽝 3번이면 <b>슈퍼 ×3</b>(빅윈 확률 +100%), 또 3번이면 <b>울트라 ×4</b>(빅윈 확률 +400%) — 오를 때마다 다시 4회전. 같은 문제를 두 번 틀리거나 시간이 다 되면 피버 회전이 하나 줄어요. <b>그만두면</b> 피버 게이지 −3칸(피버 중이면 한 단계 내려가고, ×2면 피버 끝)</li>
+            <li><b>울트라</b> 중 꽝이 나도 가끔 <b>RUSH 찬스</b>가 켜져요 → <b>피버 러시</b>! <b>당기기</b> 8번, 마지막은 빅윈 확정(같은 문제를 두 번 틀리면 그 문제엔 찬스 없음)</li>
+            <li><b>금화 6개</b>가 뜨면 홀드앤스핀 보너스</li>
+            <li><b>잔고가 늘면 레벨 업</b>: 새 칩이 나오는 레벨마다 기본 BET 이 커져요. 많이 잃으면 레벨 다운</li>
+            <li><b>✦ VIP 카드</b>: 레벨이 오르면 💰 정답 · ⚡ 골든 · 🔥 연속 · 💯 완벽 · 🎰 빅윈 보너스 중 몇 개가 저절로 커져요(무엇이 커질지는 그때마다 달라요). 맞힐 때마다 · 골든 타임에 맞히면 · 연속 5번마다 · 안 틀리고 끝내면 ★마다 돈, 빅윈은 늘 조금 더 잘 나와요. <b>LV</b>를 누르면 볼 수 있어요</li>
+            <li>돈이 줄면 걸 수 있는 BET 은 줄지만, 한 번 키운 보너스와 열린 옷은 그대로예요. 파산하면 레벨 업을 처음부터 다시 해요 — 산 옷 · 펫 · 보석은 그대로예요</li>
+          </ul>
+        </section>
+        <section class="help-page" id="help-pay" role="tabpanel" aria-labelledby="help-tab-pay" hidden></section>
+      </div>
+      <div class="help-sound" role="group" aria-label="소리 크기">
+        <label class="hs-row"><span class="hs-name"><span class="hs-ico" aria-hidden="true">🎵</span>배경 음악</span><input class="hs-range" id="vol-music" type="range" min="0" max="100" step="5" value="80"><output class="hs-val" id="vol-music-val" for="vol-music">80</output></label>
+        <label class="hs-row"><span class="hs-name"><span class="hs-ico" aria-hidden="true">🔔</span>효과음</span><input class="hs-range" id="vol-sfx" type="range" min="0" max="100" step="5" value="80"><output class="hs-val" id="vol-sfx-val" for="vol-sfx">80</output></label>
+      </div>
+      <div class="help-copybox" id="help-copybox" hidden>
+        <label class="help-copy-hint" for="help-copytext">자동 복사가 막혔어요. 아래 글을 길게 눌러 모두 선택한 뒤 복사하세요.</label>
+        <textarea class="help-copytext" id="help-copytext" rows="8" readonly spellcheck="false" autocomplete="off"></textarea>
+        <button class="text-btn" id="help-copyclose" type="button" aria-label="복사 상자 닫기">닫기</button>
+      </div>
+      <div class="help-foot">
+        <button class="text-btn" id="help-copy" type="button" hidden>기록 복사</button>
+        <button class="text-btn" id="help-export" type="button" hidden>기록 내보내기</button>
+        <button class="text-btn" id="help-replay" type="button" hidden>튜토리얼 다시 보기</button>
+        <button class="primary-btn" id="help-close" type="button">닫기</button>
+      </div>
+    </div>
+  </div>
+  <div class="start" id="start">
+    <div class="start-panel">
+      <p class="start-kicker">★1 초등 저학년부터 ★5 중학교 1학년까지</p>
+      <h1 class="start-title">BRAIN<br>JACKPOT</h1>
+      <div class="welcome-stage" id="welcome-stage"></div>
+      <div class="welcome-sign" id="welcome-sign">
+        <p class="welcome-title">환영해요!</p>
+      </div>
+      <p class="start-save" id="start-save">처음 왔구나! 문제를 맞히면 슬롯이 돌아요</p>
+      <button class="primary-btn start-btn" id="start-btn" type="button" disabled>준비 중…</button>
+      <div class="start-more">
+        <button class="text-btn" id="start-rules-btn" type="button" disabled>게임 규칙</button>
+        <button class="text-btn" id="start-pay-btn" type="button" disabled>잭팟 족보</button>
+        <button class="text-btn" id="start-tutorial-btn" type="button" disabled>튜토리얼</button>
+      </div>
+      <p class="fatal" id="start-error" hidden>슬롯머신 화면을 불러오지 못했어요. 인터넷 연결을 확인하고 다시 시도해 주세요.</p>
+      <button class="primary-btn" id="retry-btn" type="button" hidden>다시 시도</button>
+    </div>
+  </div>
+  <div class="bust" id="bust" hidden>
+    <div class="bust-panel" role="alertdialog" aria-labelledby="bust-title">
+      <p class="bust-face" aria-hidden="true">😢</p>
+      <h2 class="bust-title" id="bust-title">아쉬워요~ ㅠㅠ</h2>
+      <p class="bust-lead">벌금으로 잔고가 바닥났어요.<br>괜찮아요, 다시 도전해 봐요!</p>
+      <button class="primary-btn bust-btn" id="restart-btn" type="button">다시 하기</button>
+      <p class="bust-note">1,000으로 처음부터 다시! 산 옷과 보석은 그대로예요</p>
+    </div>
+  </div>
+  <div class="levelup" id="levelup" hidden>
+    <div class="levelup-rays" aria-hidden="true"></div>
+    <div class="levelup-burst" id="levelup-burst" aria-hidden="true"></div>
+    <div class="levelup-flash" id="levelup-flash" aria-hidden="true"></div>
+    <div class="levelup-panel" role="status" aria-live="assertive">
+      <p class="levelup-title">LEVEL UP!</p>
+      <p class="levelup-lv"><span class="levelup-from" id="levelup-from">LV 1</span><span class="levelup-arrow" aria-hidden="true">▶</span><span class="levelup-to" id="levelup-to">LV 2</span></p>
+      <p class="levelup-multi" id="levelup-multi" hidden></p>
+      <div class="levelup-stage" id="levelup-stage" hidden></div>
+      <p class="levelup-bet" id="levelup-bet"></p>
+      <ul class="levelup-news" id="levelup-news"></ul>
+      <p class="levelup-foot" id="levelup-foot"></p>
+      <button class="primary-btn levelup-btn" id="levelup-ok" type="button">좋아요!</button>
+      <div class="levelup-sparks" id="levelup-sparks" aria-hidden="true"></div>
+    </div>
+  </div>
+  <div class="lv-toast" id="lv-toast" role="status" hidden></div>
+  <div class="golden-stamp" id="golden-stamp" aria-live="polite" hidden><span class="gs-main">⚡ GOLDEN!</span><span class="gs-sub" id="golden-sub"></span></div>
+  <div id="shop-host" hidden></div>
+  <div class="loading" id="loading">슬롯머신을 준비하고 있어요…</div>
+</div>
+<script type="module" src="assets/game.js"></script>
+</body>
+</html>
