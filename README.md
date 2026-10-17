@@ -9,7 +9,7 @@
 
 PC · 태블릿 · 휴대폰 브라우저에서 바로 됩니다. 설치나 로그인은 필요 없습니다.
 
-![첫 화면](images/welcome.png)
+<p align="center"><img src="images/hero.png" width="420" alt="정답을 맞혀야만 돌아가는 슬롯머신 — MEGA WIN 화면"></p>
 
 ---
 
@@ -23,9 +23,9 @@ PC · 태블릿 · 휴대폰 브라우저에서 바로 됩니다. 설치나 로�
 
 ![풀이 화면 — 6/7 ÷ 3/7 을 "방법 고르기 → 분자끼리 나누기 → 정리" 세 단계로](images/question.png)
 
-| 슬롯이 도는 순간 | VIP 드레스룸 |
-|---|---|
-| ![정답을 고르면 바로 릴이 돈다](images/spin.png) | ![옷과 펫을 사서 입히는 상점](images/shop.png) |
+| 피버가 켜진 기계 | 큰 당첨 연출 | VIP 드레스룸 |
+|---|---|---|
+| ![게이지가 차면 기계에 불이 붙는 피버](images/fever.png) | ![동전이 쏟아지는 BIG WIN](images/bigwin.png) | ![옷과 펫을 사서 입히는 드레스룸](images/dressroom.png) |
 
 ### 들어 있는 것
 
